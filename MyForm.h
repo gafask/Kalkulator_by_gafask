@@ -20,6 +20,9 @@ namespace test
 	 using namespace System::Data;
 	 using namespace System::Drawing;
 
+	 using namespace System::Runtime::InteropServices;
+
+	 
 	 /// <summary>
 	 /// Сводка для MyForm
 	 /// </summary>
@@ -814,23 +817,48 @@ namespace test
 		  }
 	 private: System::Void Steret_Click ( System::Object^ sender, System::EventArgs^ e )
 		  { 
-		  Pervoe_chislo = Otvet->Text;
-		  //char converted_otvet_to_char = Convert::ToChar ( Pervoe_chislo );
-		  //std::string Stertoe_poslednie_chislo = converted_otvet.substr ( 0, converted_otvet.size ( ) - 1 );
+		  msclr::interop::marshal_context oMarshalContext;//Konvertator v char
+		  const char* pParameter = oMarshalContext.marshal_as<const char*> ( Otvet->Text );//Konvertator v char
+		  char* pParameter_to_char = ( char* ) pParameter;//Konver const char to char
+		  if ( strcmp ( pParameter_to_char, "" ) > 0 )
+			   {
+			   int Dlina_char = strlen ( pParameter );//Dlina char
+			   pParameter_to_char[Dlina_char - 1] = '\0';//Udalenie poslednego simvola v char
 
-
-
-		
-	
-
-		  //Otvet->Text = Convert::ToString ( str4 );
+			   int pParameter_to_int = atoi ( pParameter_to_char );//Konvertator v int
+			   if ( pParameter_to_int == 0 )
+					{
+					otvets = Convert::ToString ( "" );//Udalinie chisla iz vsex otvetov
+					Otvet->Text = Convert::ToString ( "" );// Konvertirovanie v string i vivod v otvet	 
+					}
+			   else
+					{
+					otvets = Convert::ToString ( pParameter_to_int );//Udalinie chisla iz vsex otvetov
+					Otvet->Text = Convert::ToString ( pParameter_to_int );// Konvertirovanie v string i vivod v otvet	  
+					}
+				}
+		  ///dla primer teper
+		  msclr::interop::marshal_context oMarshalContext_2;//Konvertator v char
+		  const char* pParameter_2 = oMarshalContext_2.marshal_as<const char*> ( Primer->Text );//Konvertator v char
+		  char* pParameter_to_char_2 = ( char* ) pParameter_2;//Konver const char to char
+			   if ( strcmp ( pParameter_to_char_2, "" ) > 0 )
+					{
+					int Dlina_char_2 = strlen ( pParameter_2 );//Dlina char
+					pParameter_to_char_2[Dlina_char_2 - 1] = '\0';//Udalenie poslednego simvola v char
+					String^ systemstring = gcnew String ( pParameter_to_char_2 );
+						 primerss = Convert::ToString ( systemstring );// Toge shto i s verxu toko dla primerss
+						 Primer->Text = Convert::ToString ( systemstring );// Konvertirovanie v string i vivod v programy	  
+						 
+					}	   
 		  }
 	 private: System::Void label2_Click ( System::Object^ sender, System::EventArgs^ e )
 		  { }
 };
 	 }
 
-//System::String^ otvet2;
+
+		  
+//System::String^ otvet2;s
 //System::String^ nams1 = textBox1->Text;
 //System::String^ nams2 = textBox2->Text;
 //otvet2 = nams1 + nams2;
