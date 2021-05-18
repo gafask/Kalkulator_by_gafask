@@ -65,18 +65,27 @@ namespace test
 			   public: System::Windows::Forms::Button^ Chetiri;
 			   public: System::Windows::Forms::Button^ Tri;
 			   public: System::Windows::Forms::Button^ Dva;
-			   public: System::Windows::Forms::Button^ Odin;
-			   public: System::Windows::Forms::PictureBox^ pictureBox1;
+
+
 			   public: System::Windows::Forms::Button^ Ravno;
 			   public: System::Windows::Forms::TextBox^ Primer1;
 			   public: System::Windows::Forms::Button^ Steret1;
 
 
-			   public: System::Windows::Forms::PictureBox^ pictureBox2;
+
 			   public: System::Windows::Forms::TextBox^ Deistvie;
 			   public: System::Windows::Forms::TextBox^ Primer2;
 			   public: System::Windows::Forms::Button^ Steret2;
 			   public: System::Windows::Forms::Button^ Steret3;
+			  private: System::Windows::Forms::PictureBox^ pictureBox1;
+			  public:
+			  private: System::Windows::Forms::PictureBox^ pictureBox2;
+			   public: System::Windows::Forms::Button^ Odin;
+			   private:
+
+			   private:
+
+			  private:
 
 
 
@@ -133,16 +142,16 @@ namespace test
 					this->Chetiri = ( gcnew System::Windows::Forms::Button ( ) );
 					this->Tri = ( gcnew System::Windows::Forms::Button ( ) );
 					this->Dva = ( gcnew System::Windows::Forms::Button ( ) );
-					this->Odin = ( gcnew System::Windows::Forms::Button ( ) );
-					this->pictureBox1 = ( gcnew System::Windows::Forms::PictureBox ( ) );
 					this->Ravno = ( gcnew System::Windows::Forms::Button ( ) );
 					this->Primer1 = ( gcnew System::Windows::Forms::TextBox ( ) );
 					this->Steret1 = ( gcnew System::Windows::Forms::Button ( ) );
-					this->pictureBox2 = ( gcnew System::Windows::Forms::PictureBox ( ) );
 					this->Deistvie = ( gcnew System::Windows::Forms::TextBox ( ) );
 					this->Primer2 = ( gcnew System::Windows::Forms::TextBox ( ) );
 					this->Steret2 = ( gcnew System::Windows::Forms::Button ( ) );
 					this->Steret3 = ( gcnew System::Windows::Forms::Button ( ) );
+					this->pictureBox1 = ( gcnew System::Windows::Forms::PictureBox ( ) );
+					this->pictureBox2 = ( gcnew System::Windows::Forms::PictureBox ( ) );
+					this->Odin = ( gcnew System::Windows::Forms::Button ( ) );
 					( cli::safe_cast< System::ComponentModel::ISupportInitialize^ >( this->pictureBox1 ) )->BeginInit ( );
 					( cli::safe_cast< System::ComponentModel::ISupportInitialize^ >( this->pictureBox2 ) )->BeginInit ( );
 					this->SuspendLayout ( );
@@ -154,12 +163,12 @@ namespace test
 					this->Ymnogit->Font = ( gcnew System::Drawing::Font ( L"Impact", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 																		  static_cast< System::Byte >( 204 ) ) );
 					this->Ymnogit->ForeColor = System::Drawing::Color::Maroon;
+					this->Ymnogit->Image = ( cli::safe_cast< System::Drawing::Image^ >( resources->GetObject ( L"Ymnogit.Image" ) ) );
 					this->Ymnogit->Location = System::Drawing::Point ( 223, 117 );
 					this->Ymnogit->Margin = System::Windows::Forms::Padding ( 4, 3, 4, 3 );
 					this->Ymnogit->Name = L"Ymnogit";
 					this->Ymnogit->Size = System::Drawing::Size ( 63, 59 );
 					this->Ymnogit->TabIndex = 35;
-					this->Ymnogit->Text = L"*";
 					this->Ymnogit->UseVisualStyleBackColor = false;
 					this->Ymnogit->Click += gcnew System::EventHandler ( this, &MyForm::Ymnogit_Click );
 					// 
@@ -169,12 +178,12 @@ namespace test
 					this->Rasdelit->Font = ( gcnew System::Drawing::Font ( L"Impact", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 																		   static_cast< System::Byte >( 204 ) ) );
 					this->Rasdelit->ForeColor = System::Drawing::SystemColors::WindowText;
+					this->Rasdelit->Image = ( cli::safe_cast< System::Drawing::Image^ >( resources->GetObject ( L"Rasdelit.Image" ) ) );
 					this->Rasdelit->Location = System::Drawing::Point ( 152, 117 );
 					this->Rasdelit->Margin = System::Windows::Forms::Padding ( 4, 3, 4, 3 );
 					this->Rasdelit->Name = L"Rasdelit";
 					this->Rasdelit->Size = System::Drawing::Size ( 63, 59 );
 					this->Rasdelit->TabIndex = 34;
-					this->Rasdelit->Text = L"/";
 					this->Rasdelit->UseVisualStyleBackColor = true;
 					this->Rasdelit->Click += gcnew System::EventHandler ( this, &MyForm::Rasdelit_Click );
 					// 
@@ -210,9 +219,9 @@ namespace test
 					// 
 					// Nol
 					// 
-					this->Nol->Font = ( gcnew System::Drawing::Font ( L"Yu Gothic UI Semibold", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+					this->Nol->Font = ( gcnew System::Drawing::Font ( L"Segoe UI Black", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 																	  static_cast< System::Byte >( 204 ) ) );
-					this->Nol->ForeColor = System::Drawing::Color::BlanchedAlmond;
+					this->Nol->ForeColor = System::Drawing::Color::OldLace;
 					this->Nol->Image = ( cli::safe_cast< System::Drawing::Image^ >( resources->GetObject ( L"Nol.Image" ) ) );
 					this->Nol->Location = System::Drawing::Point ( 112, 386 );
 					this->Nol->Margin = System::Windows::Forms::Padding ( 4, 3, 4, 3 );
@@ -225,18 +234,20 @@ namespace test
 					// 
 					// Otvet
 					// 
-					this->Otvet->Font = ( gcnew System::Drawing::Font ( L"Microsoft Sans Serif", 20.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+					this->Otvet->Font = ( gcnew System::Drawing::Font ( L"Segoe UI Black", 17.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 																		static_cast< System::Byte >( 204 ) ) );
+					this->Otvet->ForeColor = System::Drawing::Color::Tomato;
 					this->Otvet->Location = System::Drawing::Point ( 13, 69 );
 					this->Otvet->Margin = System::Windows::Forms::Padding ( 4, 3, 4, 3 );
 					this->Otvet->Name = L"Otvet";
-					this->Otvet->Size = System::Drawing::Size ( 269, 38 );
+					this->Otvet->Size = System::Drawing::Size ( 269, 39 );
 					this->Otvet->TabIndex = 30;
+					this->Otvet->Text = L"Тут будет ответ";
 					this->Otvet->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
 					// 
 					// Devat
 					// 
-					this->Devat->Font = ( gcnew System::Drawing::Font ( L"Yu Gothic UI Semibold", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+					this->Devat->Font = ( gcnew System::Drawing::Font ( L"Segoe UI Black", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 																		static_cast< System::Byte >( 204 ) ) );
 					this->Devat->ForeColor = System::Drawing::Color::BlanchedAlmond;
 					this->Devat->Image = ( cli::safe_cast< System::Drawing::Image^ >( resources->GetObject ( L"Devat.Image" ) ) );
@@ -251,7 +262,7 @@ namespace test
 					// 
 					// Vosem
 					// 
-					this->Vosem->Font = ( gcnew System::Drawing::Font ( L"Yu Gothic UI Semibold", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+					this->Vosem->Font = ( gcnew System::Drawing::Font ( L"Segoe UI Black", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 																		static_cast< System::Byte >( 204 ) ) );
 					this->Vosem->ForeColor = System::Drawing::Color::BlanchedAlmond;
 					this->Vosem->Image = ( cli::safe_cast< System::Drawing::Image^ >( resources->GetObject ( L"Vosem.Image" ) ) );
@@ -266,7 +277,7 @@ namespace test
 					// 
 					// Sem
 					// 
-					this->Sem->Font = ( gcnew System::Drawing::Font ( L"Yu Gothic UI Semibold", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+					this->Sem->Font = ( gcnew System::Drawing::Font ( L"Segoe UI Black", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 																	  static_cast< System::Byte >( 204 ) ) );
 					this->Sem->ForeColor = System::Drawing::Color::BlanchedAlmond;
 					this->Sem->Image = ( cli::safe_cast< System::Drawing::Image^ >( resources->GetObject ( L"Sem.Image" ) ) );
@@ -281,7 +292,7 @@ namespace test
 					// 
 					// Shest
 					// 
-					this->Shest->Font = ( gcnew System::Drawing::Font ( L"Yu Gothic UI Semibold", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+					this->Shest->Font = ( gcnew System::Drawing::Font ( L"Segoe UI Black", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 																		static_cast< System::Byte >( 204 ) ) );
 					this->Shest->ForeColor = System::Drawing::Color::WhiteSmoke;
 					this->Shest->Image = ( cli::safe_cast< System::Drawing::Image^ >( resources->GetObject ( L"Shest.Image" ) ) );
@@ -296,7 +307,7 @@ namespace test
 					// 
 					// Piat
 					// 
-					this->Piat->Font = ( gcnew System::Drawing::Font ( L"Yu Gothic UI Semibold", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+					this->Piat->Font = ( gcnew System::Drawing::Font ( L"Segoe UI Black", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 																	   static_cast< System::Byte >( 204 ) ) );
 					this->Piat->ForeColor = System::Drawing::Color::Azure;
 					this->Piat->Image = ( cli::safe_cast< System::Drawing::Image^ >( resources->GetObject ( L"Piat.Image" ) ) );
@@ -311,7 +322,7 @@ namespace test
 					// 
 					// Chetiri
 					// 
-					this->Chetiri->Font = ( gcnew System::Drawing::Font ( L"Yu Gothic UI Semibold", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+					this->Chetiri->Font = ( gcnew System::Drawing::Font ( L"Segoe UI Black", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 																		  static_cast< System::Byte >( 204 ) ) );
 					this->Chetiri->ForeColor = System::Drawing::Color::Bisque;
 					this->Chetiri->Image = ( cli::safe_cast< System::Drawing::Image^ >( resources->GetObject ( L"Chetiri.Image" ) ) );
@@ -326,7 +337,7 @@ namespace test
 					// 
 					// Tri
 					// 
-					this->Tri->Font = ( gcnew System::Drawing::Font ( L"Yu Gothic UI Semibold", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+					this->Tri->Font = ( gcnew System::Drawing::Font ( L"Segoe UI Black", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 																	  static_cast< System::Byte >( 204 ) ) );
 					this->Tri->ForeColor = System::Drawing::Color::Brown;
 					this->Tri->Image = ( cli::safe_cast< System::Drawing::Image^ >( resources->GetObject ( L"Tri.Image" ) ) );
@@ -341,7 +352,7 @@ namespace test
 					// 
 					// Dva
 					// 
-					this->Dva->Font = ( gcnew System::Drawing::Font ( L"Yu Gothic UI Semibold", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+					this->Dva->Font = ( gcnew System::Drawing::Font ( L"Segoe UI Black", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 																	  static_cast< System::Byte >( 204 ) ) );
 					this->Dva->ForeColor = System::Drawing::Color::Bisque;
 					this->Dva->Image = ( cli::safe_cast< System::Drawing::Image^ >( resources->GetObject ( L"Dva.Image" ) ) );
@@ -354,9 +365,141 @@ namespace test
 					this->Dva->UseVisualStyleBackColor = true;
 					this->Dva->Click += gcnew System::EventHandler ( this, &MyForm::Dva_Click );
 					// 
+					// Ravno
+					// 
+					this->Ravno->BackgroundImage = ( cli::safe_cast< System::Drawing::Image^ >( resources->GetObject ( L"Ravno.BackgroundImage" ) ) );
+					this->Ravno->Font = ( gcnew System::Drawing::Font ( L"Yu Gothic UI Semibold", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+																		static_cast< System::Byte >( 204 ) ) );
+					this->Ravno->ForeColor = System::Drawing::Color::Bisque;
+					this->Ravno->Image = ( cli::safe_cast< System::Drawing::Image^ >( resources->GetObject ( L"Ravno.Image" ) ) );
+					this->Ravno->Location = System::Drawing::Point ( 41, 182 );
+					this->Ravno->Margin = System::Windows::Forms::Padding ( 4, 3, 4, 3 );
+					this->Ravno->Name = L"Ravno";
+					this->Ravno->Size = System::Drawing::Size ( 205, 45 );
+					this->Ravno->TabIndex = 37;
+					this->Ravno->UseVisualStyleBackColor = true;
+					this->Ravno->Click += gcnew System::EventHandler ( this, &MyForm::Ravno_Click );
+					// 
+					// Primer1
+					// 
+					this->Primer1->BackColor = System::Drawing::SystemColors::ButtonShadow;
+					this->Primer1->Cursor = System::Windows::Forms::Cursors::No;
+					this->Primer1->Enabled = false;
+					this->Primer1->Font = ( gcnew System::Drawing::Font ( L"Segoe UI Black", 17.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+																		  static_cast< System::Byte >( 204 ) ) );
+					this->Primer1->ForeColor = System::Drawing::SystemColors::WindowFrame;
+					this->Primer1->Location = System::Drawing::Point ( 9, 4 );
+					this->Primer1->Margin = System::Windows::Forms::Padding ( 4, 3, 4, 3 );
+					this->Primer1->Name = L"Primer1";
+					this->Primer1->Size = System::Drawing::Size ( 115, 39 );
+					this->Primer1->TabIndex = 38;
+					this->Primer1->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+					// 
+					// Steret1
+					// 
+					this->Steret1->BackColor = System::Drawing::SystemColors::ButtonShadow;
+					this->Steret1->BackgroundImage = ( cli::safe_cast< System::Drawing::Image^ >( resources->GetObject ( L"Steret1.BackgroundImage" ) ) );
+					this->Steret1->Font = ( gcnew System::Drawing::Font ( L"Segoe UI Black", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+																		  static_cast< System::Byte >( 204 ) ) );
+					this->Steret1->ForeColor = System::Drawing::Color::SpringGreen;
+					this->Steret1->Image = ( cli::safe_cast< System::Drawing::Image^ >( resources->GetObject ( L"Steret1.Image" ) ) );
+					this->Steret1->ImageAlign = System::Drawing::ContentAlignment::MiddleRight;
+					this->Steret1->Location = System::Drawing::Point ( 41, 386 );
+					this->Steret1->Margin = System::Windows::Forms::Padding ( 4, 3, 4, 3 );
+					this->Steret1->Name = L"Steret1";
+					this->Steret1->Size = System::Drawing::Size ( 63, 45 );
+					this->Steret1->TabIndex = 39;
+					this->Steret1->Text = L">";
+					this->Steret1->UseVisualStyleBackColor = false;
+					this->Steret1->Click += gcnew System::EventHandler ( this, &MyForm::Steret_Click );
+					// 
+					// Deistvie
+					// 
+					this->Deistvie->BackColor = System::Drawing::SystemColors::ButtonShadow;
+					this->Deistvie->Cursor = System::Windows::Forms::Cursors::No;
+					this->Deistvie->Enabled = false;
+					this->Deistvie->Font = ( gcnew System::Drawing::Font ( L"Segoe UI Black", 17.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+																		   static_cast< System::Byte >( 204 ) ) );
+					this->Deistvie->ForeColor = System::Drawing::SystemColors::WindowFrame;
+					this->Deistvie->Location = System::Drawing::Point ( 122, 4 );
+					this->Deistvie->Margin = System::Windows::Forms::Padding ( 4, 3, 4, 3 );
+					this->Deistvie->Name = L"Deistvie";
+					this->Deistvie->Size = System::Drawing::Size ( 44, 39 );
+					this->Deistvie->TabIndex = 41;
+					this->Deistvie->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+					// 
+					// Primer2
+					// 
+					this->Primer2->BackColor = System::Drawing::SystemColors::ButtonShadow;
+					this->Primer2->Cursor = System::Windows::Forms::Cursors::No;
+					this->Primer2->Enabled = false;
+					this->Primer2->Font = ( gcnew System::Drawing::Font ( L"Segoe UI Black", 17.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+																		  static_cast< System::Byte >( 204 ) ) );
+					this->Primer2->ForeColor = System::Drawing::SystemColors::WindowFrame;
+					this->Primer2->Location = System::Drawing::Point ( 165, 4 );
+					this->Primer2->Margin = System::Windows::Forms::Padding ( 4, 3, 4, 3 );
+					this->Primer2->Name = L"Primer2";
+					this->Primer2->Size = System::Drawing::Size ( 117, 39 );
+					this->Primer2->TabIndex = 42;
+					this->Primer2->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
+					// 
+					// Steret2
+					// 
+					this->Steret2->BackColor = System::Drawing::SystemColors::ButtonShadow;
+					this->Steret2->Font = ( gcnew System::Drawing::Font ( L"Segoe UI Black", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+																		  static_cast< System::Byte >( 204 ) ) );
+					this->Steret2->ForeColor = System::Drawing::Color::SpringGreen;
+					this->Steret2->Image = ( cli::safe_cast< System::Drawing::Image^ >( resources->GetObject ( L"Steret2.Image" ) ) );
+					this->Steret2->ImageAlign = System::Drawing::ContentAlignment::BottomRight;
+					this->Steret2->Location = System::Drawing::Point ( 183, 386 );
+					this->Steret2->Margin = System::Windows::Forms::Padding ( 4, 3, 4, 3 );
+					this->Steret2->Name = L"Steret2";
+					this->Steret2->Size = System::Drawing::Size ( 63, 45 );
+					this->Steret2->TabIndex = 43;
+					this->Steret2->Text = L"<";
+					this->Steret2->UseVisualStyleBackColor = false;
+					this->Steret2->Click += gcnew System::EventHandler ( this, &MyForm::Steret2_Click );
+					// 
+					// Steret3
+					// 
+					this->Steret3->BackColor = System::Drawing::SystemColors::ButtonShadow;
+					this->Steret3->Font = ( gcnew System::Drawing::Font ( L"Segoe UI Black", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+																		  static_cast< System::Byte >( 204 ) ) );
+					this->Steret3->ForeColor = System::Drawing::Color::SpringGreen;
+					this->Steret3->Image = ( cli::safe_cast< System::Drawing::Image^ >( resources->GetObject ( L"Steret3.Image" ) ) );
+					this->Steret3->Location = System::Drawing::Point ( 112, 438 );
+					this->Steret3->Margin = System::Windows::Forms::Padding ( 4, 3, 4, 3 );
+					this->Steret3->Name = L"Steret3";
+					this->Steret3->Size = System::Drawing::Size ( 63, 45 );
+					this->Steret3->TabIndex = 44;
+					this->Steret3->Text = L"-";
+					this->Steret3->UseVisualStyleBackColor = false;
+					this->Steret3->Click += gcnew System::EventHandler ( this, &MyForm::Steret3_Click );
+					// 
+					// pictureBox1
+					// 
+					this->pictureBox1->BackColor = System::Drawing::Color::Transparent;
+					this->pictureBox1->BackgroundImage = ( cli::safe_cast< System::Drawing::Image^ >( resources->GetObject ( L"pictureBox1.BackgroundImage" ) ) );
+					this->pictureBox1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+					this->pictureBox1->Location = System::Drawing::Point ( 112, 42 );
+					this->pictureBox1->Name = L"pictureBox1";
+					this->pictureBox1->Size = System::Drawing::Size ( 63, 28 );
+					this->pictureBox1->TabIndex = 45;
+					this->pictureBox1->TabStop = false;
+					// 
+					// pictureBox2
+					// 
+					this->pictureBox2->BackgroundImage = ( cli::safe_cast< System::Drawing::Image^ >( resources->GetObject ( L"pictureBox2.BackgroundImage" ) ) );
+					this->pictureBox2->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+					this->pictureBox2->Location = System::Drawing::Point ( -1, -3 );
+					this->pictureBox2->Name = L"pictureBox2";
+					this->pictureBox2->Size = System::Drawing::Size ( 296, 486 );
+					this->pictureBox2->TabIndex = 46;
+					this->pictureBox2->TabStop = false;
+					// 
 					// Odin
 					// 
-					this->Odin->Font = ( gcnew System::Drawing::Font ( L"Yu Gothic UI Semibold", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+					this->Odin->Font = ( gcnew System::Drawing::Font ( L"Segoe UI Black", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 																	   static_cast< System::Byte >( 204 ) ) );
 					this->Odin->ForeColor = System::Drawing::Color::Bisque;
 					this->Odin->Image = ( cli::safe_cast< System::Drawing::Image^ >( resources->GetObject ( L"Odin.Image" ) ) );
@@ -370,154 +513,18 @@ namespace test
 					this->Odin->UseVisualStyleBackColor = true;
 					this->Odin->Click += gcnew System::EventHandler ( this, &MyForm::Odin_Click );
 					// 
-					// pictureBox1
-					// 
-					this->pictureBox1->BackgroundImage = ( cli::safe_cast< System::Drawing::Image^ >( resources->GetObject ( L"pictureBox1.BackgroundImage" ) ) );
-					this->pictureBox1->ErrorImage = ( cli::safe_cast< System::Drawing::Image^ >( resources->GetObject ( L"pictureBox1.ErrorImage" ) ) );
-					this->pictureBox1->Image = ( cli::safe_cast< System::Drawing::Image^ >( resources->GetObject ( L"pictureBox1.Image" ) ) );
-					this->pictureBox1->InitialImage = ( cli::safe_cast< System::Drawing::Image^ >( resources->GetObject ( L"pictureBox1.InitialImage" ) ) );
-					this->pictureBox1->Location = System::Drawing::Point ( -2, -8 );
-					this->pictureBox1->Name = L"pictureBox1";
-					this->pictureBox1->Size = System::Drawing::Size ( 303, 491 );
-					this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
-					this->pictureBox1->TabIndex = 36;
-					this->pictureBox1->TabStop = false;
-					// 
-					// Ravno
-					// 
-					this->Ravno->Font = ( gcnew System::Drawing::Font ( L"Yu Gothic UI Semibold", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-																		static_cast< System::Byte >( 204 ) ) );
-					this->Ravno->ForeColor = System::Drawing::Color::Bisque;
-					this->Ravno->Image = ( cli::safe_cast< System::Drawing::Image^ >( resources->GetObject ( L"Ravno.Image" ) ) );
-					this->Ravno->Location = System::Drawing::Point ( 41, 182 );
-					this->Ravno->Margin = System::Windows::Forms::Padding ( 4, 3, 4, 3 );
-					this->Ravno->Name = L"Ravno";
-					this->Ravno->Size = System::Drawing::Size ( 205, 45 );
-					this->Ravno->TabIndex = 37;
-					this->Ravno->Text = L"=";
-					this->Ravno->UseVisualStyleBackColor = true;
-					this->Ravno->Click += gcnew System::EventHandler ( this, &MyForm::Ravno_Click );
-					// 
-					// Primer1
-					// 
-					this->Primer1->BackColor = System::Drawing::SystemColors::ButtonShadow;
-					this->Primer1->Cursor = System::Windows::Forms::Cursors::No;
-					this->Primer1->Enabled = false;
-					this->Primer1->Font = ( gcnew System::Drawing::Font ( L"Microsoft Sans Serif", 20.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-																		  static_cast< System::Byte >( 204 ) ) );
-					this->Primer1->ForeColor = System::Drawing::SystemColors::WindowFrame;
-					this->Primer1->Location = System::Drawing::Point ( 9, 4 );
-					this->Primer1->Margin = System::Windows::Forms::Padding ( 4, 3, 4, 3 );
-					this->Primer1->Name = L"Primer1";
-					this->Primer1->Size = System::Drawing::Size ( 115, 38 );
-					this->Primer1->TabIndex = 38;
-					this->Primer1->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
-					// 
-					// Steret1
-					// 
-					this->Steret1->BackColor = System::Drawing::SystemColors::ButtonShadow;
-					this->Steret1->Font = ( gcnew System::Drawing::Font ( L"Yu Gothic UI Semibold", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-																		  static_cast< System::Byte >( 204 ) ) );
-					this->Steret1->ForeColor = System::Drawing::Color::SpringGreen;
-					this->Steret1->Image = ( cli::safe_cast< System::Drawing::Image^ >( resources->GetObject ( L"Steret1.Image" ) ) );
-					this->Steret1->Location = System::Drawing::Point ( 41, 386 );
-					this->Steret1->Margin = System::Windows::Forms::Padding ( 4, 3, 4, 3 );
-					this->Steret1->Name = L"Steret1";
-					this->Steret1->Size = System::Drawing::Size ( 63, 45 );
-					this->Steret1->TabIndex = 39;
-					this->Steret1->Text = L">";
-					this->Steret1->UseVisualStyleBackColor = false;
-					this->Steret1->Click += gcnew System::EventHandler ( this, &MyForm::Steret_Click );
-					// 
-					// pictureBox2
-					// 
-					this->pictureBox2->BackColor = System::Drawing::Color::Aquamarine;
-					this->pictureBox2->BackgroundImage = ( cli::safe_cast< System::Drawing::Image^ >( resources->GetObject ( L"pictureBox2.BackgroundImage" ) ) );
-					this->pictureBox2->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
-					this->pictureBox2->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-					this->pictureBox2->Cursor = System::Windows::Forms::Cursors::Default;
-					this->pictureBox2->Image = ( cli::safe_cast< System::Drawing::Image^ >( resources->GetObject ( L"pictureBox2.Image" ) ) );
-					this->pictureBox2->InitialImage = ( cli::safe_cast< System::Drawing::Image^ >( resources->GetObject ( L"pictureBox2.InitialImage" ) ) );
-					this->pictureBox2->Location = System::Drawing::Point ( 112, 42 );
-					this->pictureBox2->Name = L"pictureBox2";
-					this->pictureBox2->Size = System::Drawing::Size ( 63, 27 );
-					this->pictureBox2->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
-					this->pictureBox2->TabIndex = 40;
-					this->pictureBox2->TabStop = false;
-					// 
-					// Deistvie
-					// 
-					this->Deistvie->BackColor = System::Drawing::SystemColors::ButtonShadow;
-					this->Deistvie->Cursor = System::Windows::Forms::Cursors::No;
-					this->Deistvie->Enabled = false;
-					this->Deistvie->Font = ( gcnew System::Drawing::Font ( L"Microsoft Sans Serif", 20.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-																		   static_cast< System::Byte >( 204 ) ) );
-					this->Deistvie->ForeColor = System::Drawing::SystemColors::WindowFrame;
-					this->Deistvie->Location = System::Drawing::Point ( 122, 4 );
-					this->Deistvie->Margin = System::Windows::Forms::Padding ( 4, 3, 4, 3 );
-					this->Deistvie->Name = L"Deistvie";
-					this->Deistvie->Size = System::Drawing::Size ( 44, 38 );
-					this->Deistvie->TabIndex = 41;
-					this->Deistvie->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
-					// 
-					// Primer2
-					// 
-					this->Primer2->BackColor = System::Drawing::SystemColors::ButtonShadow;
-					this->Primer2->Cursor = System::Windows::Forms::Cursors::No;
-					this->Primer2->Enabled = false;
-					this->Primer2->Font = ( gcnew System::Drawing::Font ( L"Microsoft Sans Serif", 20.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-																		  static_cast< System::Byte >( 204 ) ) );
-					this->Primer2->ForeColor = System::Drawing::SystemColors::WindowFrame;
-					this->Primer2->Location = System::Drawing::Point ( 165, 4 );
-					this->Primer2->Margin = System::Windows::Forms::Padding ( 4, 3, 4, 3 );
-					this->Primer2->Name = L"Primer2";
-					this->Primer2->Size = System::Drawing::Size ( 117, 38 );
-					this->Primer2->TabIndex = 42;
-					this->Primer2->TextAlign = System::Windows::Forms::HorizontalAlignment::Center;
-					// 
-					// Steret2
-					// 
-					this->Steret2->BackColor = System::Drawing::SystemColors::ButtonShadow;
-					this->Steret2->Font = ( gcnew System::Drawing::Font ( L"Yu Gothic UI Semibold", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-																		  static_cast< System::Byte >( 204 ) ) );
-					this->Steret2->ForeColor = System::Drawing::Color::SpringGreen;
-					this->Steret2->Image = ( cli::safe_cast< System::Drawing::Image^ >( resources->GetObject ( L"Steret2.Image" ) ) );
-					this->Steret2->Location = System::Drawing::Point ( 183, 386 );
-					this->Steret2->Margin = System::Windows::Forms::Padding ( 4, 3, 4, 3 );
-					this->Steret2->Name = L"Steret2";
-					this->Steret2->Size = System::Drawing::Size ( 63, 45 );
-					this->Steret2->TabIndex = 43;
-					this->Steret2->Text = L"<";
-					this->Steret2->UseVisualStyleBackColor = false;
-					this->Steret2->Click += gcnew System::EventHandler ( this, &MyForm::Steret2_Click );
-					// 
-					// Steret3
-					// 
-					this->Steret3->BackColor = System::Drawing::SystemColors::ButtonShadow;
-					this->Steret3->Font = ( gcnew System::Drawing::Font ( L"Yu Gothic UI Semibold", 20, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-																		  static_cast< System::Byte >( 204 ) ) );
-					this->Steret3->ForeColor = System::Drawing::Color::SpringGreen;
-					this->Steret3->Image = ( cli::safe_cast< System::Drawing::Image^ >( resources->GetObject ( L"Steret3.Image" ) ) );
-					this->Steret3->Location = System::Drawing::Point ( 112, 438 );
-					this->Steret3->Margin = System::Windows::Forms::Padding ( 4, 3, 4, 3 );
-					this->Steret3->Name = L"Steret3";
-					this->Steret3->Size = System::Drawing::Size ( 63, 45 );
-					this->Steret3->TabIndex = 44;
-					this->Steret3->Text = L"-";
-					this->Steret3->UseVisualStyleBackColor = false;
-					this->Steret3->Click += gcnew System::EventHandler ( this, &MyForm::Steret3_Click );
-					// 
 					// MyForm
 					// 
 					this->AutoScaleDimensions = System::Drawing::SizeF ( 6, 13 );
 					this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 					this->BackgroundImage = ( cli::safe_cast< System::Drawing::Image^ >( resources->GetObject ( L"$this.BackgroundImage" ) ) );
+					this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 					this->ClientSize = System::Drawing::Size ( 295, 482 );
+					this->Controls->Add ( this->pictureBox1 );
 					this->Controls->Add ( this->Steret3 );
 					this->Controls->Add ( this->Steret2 );
 					this->Controls->Add ( this->Primer2 );
 					this->Controls->Add ( this->Deistvie );
-					this->Controls->Add ( this->pictureBox2 );
 					this->Controls->Add ( this->Steret1 );
 					this->Controls->Add ( this->Primer1 );
 					this->Controls->Add ( this->Ravno );
@@ -536,14 +543,13 @@ namespace test
 					this->Controls->Add ( this->Tri );
 					this->Controls->Add ( this->Dva );
 					this->Controls->Add ( this->Odin );
-					this->Controls->Add ( this->pictureBox1 );
+					this->Controls->Add ( this->pictureBox2 );
 					this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedDialog;
 					this->Icon = ( cli::safe_cast< System::Drawing::Icon^ >( resources->GetObject ( L"$this.Icon" ) ) );
 					this->Name = L"MyForm";
-					this->StartPosition = System::Windows::Forms::FormStartPosition::CenterParent;
+					this->StartPosition = System::Windows::Forms::FormStartPosition::CenterScreen;
 					this->Text = L"Калькулятор by gafask";
 					this->TransparencyKey = System::Drawing::Color::Red;
-					this->WindowState = System::Windows::Forms::FormWindowState::Minimized;
 					( cli::safe_cast< System::ComponentModel::ISupportInitialize^ >( this->pictureBox1 ) )->EndInit ( );
 					( cli::safe_cast< System::ComponentModel::ISupportInitialize^ >( this->pictureBox2 ) )->EndInit ( );
 					this->ResumeLayout ( false );
@@ -593,10 +599,12 @@ namespace test
 						 }
 					if ( nagatie_deisvia == true)
 						 {
+						 Otvet->Text = System::Convert::ToString ( "" );
 						 Primer2->Text = System::Convert::ToString ( otvets += 1 );//Пример
 						 }
 					else
 						 {
+						 Otvet->Text = System::Convert::ToString ( "" );
 						 Primer1->Text = System::Convert::ToString ( otvets += 1 );//Пример
 						 }
 					}
@@ -622,10 +630,12 @@ namespace test
 							  }
 						 if ( nagatie_deisvia == true )
 							  {
+							  Otvet->Text = System::Convert::ToString ( "" );
 							  Primer2->Text = System::Convert::ToString ( otvets += 2 );//Пример
 							  }
 						 else
 							  {
+							  Otvet->Text = System::Convert::ToString ( "" );
 							  Primer1->Text = System::Convert::ToString ( otvets += 2 );//Пример
 							  }
 						 }
@@ -651,10 +661,12 @@ namespace test
 			   }
 		  if ( nagatie_deisvia == true )
 			   {
+			   Otvet->Text = System::Convert::ToString ( "" );
 			   Primer2->Text = System::Convert::ToString ( otvets += 3 );//Пример
 			   }
 		  else
 			   {
+			   Otvet->Text = System::Convert::ToString ( "" );
 			   Primer1->Text = System::Convert::ToString ( otvets += 3 );//Пример
 			   }
 		  }
@@ -680,10 +692,12 @@ namespace test
 			   }
 		  if ( nagatie_deisvia == true )
 			   {
+			   Otvet->Text = System::Convert::ToString ( "" );
 			   Primer2->Text = System::Convert::ToString ( otvets += 4 );//Пример
 			   }
 		  else
 			   {
+			   Otvet->Text = System::Convert::ToString ( "" );
 			   Primer1->Text = System::Convert::ToString ( otvets += 4 );//Пример
 			   }
 		  }
@@ -709,10 +723,12 @@ namespace test
 			   }
 		  if ( nagatie_deisvia == true )
 			   {
+			   Otvet->Text = System::Convert::ToString ( "" );
 			   Primer2->Text = System::Convert::ToString ( otvets += 5 );//Пример
 			   }
 		  else
 			   {
+			   Otvet->Text = System::Convert::ToString ( "" );
 			   Primer1->Text = System::Convert::ToString ( otvets += 5 );//Пример
 			   }
 		  }
@@ -738,10 +754,12 @@ namespace test
 			   }
 		  if ( nagatie_deisvia == true )
 			   {
+			   Otvet->Text = System::Convert::ToString ( "" );
 			   Primer2->Text = System::Convert::ToString ( otvets += 6 );//Пример
 			   }
 		  else
 			   {
+			   Otvet->Text = System::Convert::ToString ( "" );
 			   Primer1->Text = System::Convert::ToString ( otvets += 6 );//Пример
 			   }
 		  }
@@ -767,10 +785,12 @@ namespace test
 			   }
 		  if ( nagatie_deisvia == true )
 			   {
+			   Otvet->Text = System::Convert::ToString ( "" );
 			   Primer2->Text = System::Convert::ToString ( otvets += 7 );//Пример
 			   }
 		  else
 			   {
+			   Otvet->Text = System::Convert::ToString ( "" );
 			   Primer1->Text = System::Convert::ToString ( otvets += 7 );//Пример
 			   }
 		  }
@@ -796,10 +816,12 @@ namespace test
 			   }
 		  if ( nagatie_deisvia == true )
 			   {
+			   Otvet->Text = System::Convert::ToString ( "" );
 			   Primer2->Text = System::Convert::ToString ( otvets += 8 );//Пример
 			   }
 		  else
 			   {
+			   Otvet->Text = System::Convert::ToString ( "" );
 			   Primer1->Text = System::Convert::ToString ( otvets += 8 );//Пример
 			   }
 		  }
@@ -825,10 +847,12 @@ namespace test
 			   }
 		  if ( nagatie_deisvia == true )
 			   {
+			   Otvet->Text = System::Convert::ToString ( "" );
 			   Primer2->Text = System::Convert::ToString ( otvets += 9 );//Пример
 			   }
 		  else
 			   {
+			   Otvet->Text = System::Convert::ToString ( "" );
 			   Primer1->Text = System::Convert::ToString ( otvets += 9 );//Пример
 			   }
 		  }
@@ -854,10 +878,12 @@ namespace test
 			   }
 		  if ( nagatie_deisvia == true )
 			   {
+			   Otvet->Text = System::Convert::ToString ( "" );
 			   Primer2->Text = System::Convert::ToString ( otvets += 0 );//Пример
 			   }
 		  else
 			   {
+			   Otvet->Text = System::Convert::ToString ( "" );
 			   Primer1->Text = System::Convert::ToString ( otvets += 0 );//Пример
 			   }
 		  }
@@ -886,10 +912,10 @@ namespace test
 					Pervoe_chislo = Primer1->Text;
 					Vtoroe_chislo = Primer2->Text;
 					int int_Pervoe_chislo = NULL;
-					int_Pervoe_chislo = Int32::Parse ( Pervoe_chislo );
+					int_Pervoe_chislo = Int64::Parse ( Pervoe_chislo );
 					int int_Vtoroe_chislo = NULL;
-					int_Vtoroe_chislo = Int32::Parse ( Vtoroe_chislo );
-					int int_otvets = Int32::Parse ( otvets );
+					int_Vtoroe_chislo = Int64::Parse ( Vtoroe_chislo );
+					int int_otvets = Int64::Parse ( otvets );
 					if ( pluss == true )
 						 {
 						 int_otvets = int_Pervoe_chislo + int_Vtoroe_chislo;
