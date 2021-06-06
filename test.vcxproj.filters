@@ -15,12 +15,12 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="MyForm.cpp">
+    <ClCompile Include="CalculationMainForm.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="MyForm.h">
+    <ClInclude Include="CalculationMainForm.h">
       <Filter>Исходные файлы</Filter>
     </ClInclude>
     <ClInclude Include="resource.h">
@@ -36,7 +36,7 @@
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="..\..\..\..\Downloads\calculator-icon_34473.ico">
+    <Image Include="..\..\..\..\Downloads\calculator_14445.ico">
       <Filter>Файлы ресурсов</Filter>
     </Image>
   </ItemGroup>

@@ -1,3 +1,4 @@
+#pragma execution_character_set("utf-8")
 //{{NO_DEPENDENCIES}}
 // Включаемый файл, созданный в Microsoft Visual C++.
 // Используется test.rc

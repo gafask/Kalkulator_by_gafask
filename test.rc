@@ -52,7 +52,7 @@ END
 
 // Icon with lowest ID value placed first to ensure application icon
 // remains consistent on all systems.
-IDI_ICON3               ICON                    "C:\\Users\\zak1_\\Downloads\\calculator-icon_34473.ico"
+IDI_ICON3               ICON                    "C:\\Users\\zak1_\\Downloads\\calculator_14445.ico"
 
 #endif    // Русский (Россия) resources
 /////////////////////////////////////////////////////////////////////////////
